@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <title>Checkin</title>
+
+        <link href="https://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
+
+        <style>
+            body {
+                padding-top: 5rem;
+            }
+        </style>
+    </head>
+
+    <body>
+
+        <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+            <a class="navbar-brand" href="#">Checkin</a>
+        </nav>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8">
+                    <h5>Reports</h5>
+                    <hr>
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <canvas id="reportChart"></canvas>
+                        </div>
+                    </div>
+
+                    <br><br>
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <table class="table">
+                                <thead class="thead-default">
+                                    <tr>
+                                        <th>Date</th>
+                                        <th>Participation</th>
+                                        <th>Completion</th>
+                                        <th>Blocked</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Aug 7, 2017</td>
+                                        <td><span class="text-primary">100%</span></td>
+                                        <td><span class="text-success">80%</span></td>
+                                        <td><span class="text-danger">0%</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Aug 8, 2017</td>
+                                        <td><span class="text-primary">80%</span></td>
+                                        <td><span class="text-success">70%</span></td>
+                                        <td><span class="text-danger">20%</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Aug 9, 2017</td>
+                                        <td><span class="text-primary">90%</span></td>
+                                        <td><span class="text-success">60%</span></td>
+                                        <td><span class="text-danger">0%</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Aug 10, 2017</td>
+                                        <td><span class="text-primary">70%</span></td>
+                                        <td><span class="text-success">70%</span></td>
+                                        <td><span class="text-danger">30%</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Aug 11, 2017</td>
+                                        <td><span class="text-primary">100%</span></td>
+                                        <td><span class="text-success">50%</span></td>
+                                        <td><span class="text-danger">10%</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <h5>Team</h5>
+                    <hr>
+                    <div class="row">
+                        <div class="col-md-3">
+                            <img src="http://via.placeholder.com/65x65" alt="John Doe" class="rounded-circle">
+                        </div>
+                        <div class="col-md-9">
+                            <strong>John Doe</strong>
+                            <br>
+                            <span class="text-primary">100%</span>
+                            <span class="text-success">80%</span>
+                            <span class="text-danger">20%</span>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-md-3">
+                            <img src="http://via.placeholder.com/65x65" alt="Jane Doe" class="rounded-circle">
+                        </div>
+                        <div class="col-md-9">
+                            <strong>Jane Doe</strong>
+                            <br>
+                            <span class="text-primary">100%</span>
+                            <span class="text-success">80%</span>
+                            <span class="text-danger">20%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+        <script>window.jQuery || document.write('<script src="https://getbootstrap.com/assets/js/vendor/jquery.min.js"><\/script>')</script>
+        <script src="https://getbootstrap.com/assets/js/vendor/popper.min.js"></script>
+        <script src="https://getbootstrap.com/dist/js/bootstrap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+        <script type="text/javascript">
+            $(function(){
+                var ctx = document.getElementById('reportChart').getContext('2d');
+
+                var chart = new Chart(ctx, {
+                    // The type of chart we want to create
+                    type: 'line',
+
+                    // The data for our dataset
+                    data: {
+                        labels: ["Aug 7", "Aug 8", "Aug 9", "Aug 10", "Aug 11"],
+                        datasets: [
+                            {
+                                label: "Participation",
+                                backgroundColor: 'rgba(0, 0, 0, 0.0)',
+                                borderColor: '#007bff',
+                                data: [100, 80, 90, 70, 100],
+                            },
+                            {
+                                label: "Goal completion",
+                                backgroundColor: 'rgba(0, 0, 0, 0.0)',
+                                borderColor: '#28a745',
+                                data: [80, 70, 60, 70, 50],
+                            },
+                            {
+                                label: "Blocked",
+                                backgroundColor: 'rgba(0, 0, 0, 0.0)',
+                                borderColor: '#dc3545',
+                                data: [0, 20, 0, 30, 10],
+                            }
+                        ]
+                    },
+
+                    // Configuration options go here
+                    options: { }
+                });
+            });
+        </script>
+    </body>
+</html>
