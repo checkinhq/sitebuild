@@ -1,0 +1,39 @@
+{
+  "name": "sitebuild",
+  "version": "0.1.0",
+  "description": "Checkin sitebuild",
+  "scripts": {
+    "build": "npm-run-all clean css js html",
+    "clean": "shx rm -rf dist/",
+    "css": "npm-run-all css-compile css-prefix css-minify",
+    "css-compile": "node-sass --output-style expanded --source-map true --source-map-contents true --precision 6 src/scss/style.scss dist/assets/css/style.css",
+    "css-prefix": "postcss --replace dist/assets/css/*.css",
+    "css-minify": "cleancss --level 1 --source-map --source-map-inline-sources --output dist/assets/css/style.min.css dist/assets/css/style.css",
+    "js": "shx mkdir -p dist/assets/js/ && shx cp node_modules/bootstrap/dist/js/bootstrap.min.js dist/assets/js/ && shx cp node_modules/jquery/dist/jquery.min.js dist/assets/js/ && shx cp node_modules/popper.js/dist/popper.min.js dist/assets/js/",
+    "html": "ejs-cli *.ejs --base-dir src/html/ --out dist/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/checkinhq/sitebuild.git"
+  },
+  "author": "Márk Sági-Kazár",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/checkinhq/sitebuild/issues"
+  },
+  "homepage": "https://github.com/checkinhq/sitebuild",
+  "dependencies": {
+    "bootstrap": "^4.0.0-beta",
+    "jquery": "^3.2.1",
+    "popper.js": "^1.11.1"
+  },
+  "devDependencies": {
+    "autoprefixer": "^7.1.2",
+    "clean-css-cli": "^4.1.6",
+    "ejs-cli": "^2.0.0",
+    "node-sass": "^4.5.3",
+    "npm-run-all": "^4.0.2",
+    "postcss-cli": "^4.1.0",
+    "shx": "^0.2.2"
+  }
+}
