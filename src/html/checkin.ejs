@@ -8,30 +8,49 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-12">
                     <form>
                         <div class="form-group">
                             <label for="previous">What did you do yesterday?</label>
-                            <textarea class="form-control" id="previous" rows="3"></textarea>
-                            <small id="previousHelp" class="form-text text-muted">Explain briefly: one or two sentences.</small>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <textarea class="form-control" id="previous" rows="3"></textarea>
+                                    <small id="previousHelp" class="form-text text-muted d-none d-md-block">Explain briefly: one or two sentences.</small>
+                                </div>
+                                <div class="col-md-6">
+                                    <small id="previousHint" class="form-text text-muted"><strong>YESTERDAY'S GOALS:</strong> Lorem ipsum dolor</small>
+                                </div>
+                            </div>
                         </div>
 
-                        <label class="custom-control custom-checkbox">
-                            <input type="checkbox" class="custom-control-input">
-                            <span class="custom-control-indicator"></span>
-                            <span class="custom-control-description">Did you meet yesterday's goals?</span>
-                        </label>
-
-                        <div class="form-group">
-                            <label for="next">What are your goals for today?</label>
-                            <textarea class="form-control" id="next" rows="3"></textarea>
-                            <small id="nextHelp" class="form-text text-muted">Just one or two sentences.</small>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label class="custom-control custom-checkbox">
+                                    <input type="checkbox" class="custom-control-input">
+                                    <span class="custom-control-indicator"></span>
+                                    <span class="custom-control-description">Did you meet yesterday's goals?</span>
+                                </label>
+                            </div>
                         </div>
 
-                        <div class="form-group">
-                            <label for="impediments">Are there any impediments in your way?</label>
-                            <textarea class="form-control" id="impediments" rows="3"></textarea>
-                            <small id="impedimentsHelp" class="form-text text-muted">Leave this empty if you don't need help.</small>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="next">What are your goals for today?</label>
+                                    <textarea class="form-control" id="next" rows="3"></textarea>
+                                    <small id="nextHelp" class="form-text text-muted">Just one or two sentences.</small>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="impediments">Are there any impediments in your way?</label>
+                                    <textarea class="form-control" id="impediments" rows="3"></textarea>
+                                    <small id="impedimentsHelp" class="form-text text-muted">Leave this empty if you don't need help.</small>
+                                </div>
+                            </div>
                         </div>
 
                         <button type="submit" class="btn btn-primary">Checkin</button>
